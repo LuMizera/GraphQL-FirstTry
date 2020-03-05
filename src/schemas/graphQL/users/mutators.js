@@ -1,3 +1,3 @@
 module.exports = `
-  register(name: String!): User
+  userRegister(name: String!): User
 `;

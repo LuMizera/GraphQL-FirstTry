@@ -1,4 +1,4 @@
 module.exports = `
   userList: [User]
-  user(_id: ID!): User
+  userById(_id: ID!): User
 `;

@@ -3,7 +3,7 @@ module.exports = {
     const result = await userModel.listUsers();
     return result;
   },
-  user: async (_, query, { dataSources: { userModel } }) => {
+  userById: async (_, query, { dataSources: { userModel } }) => {
     const result = await userModel.userByQuery(query);
     return result;
   },
