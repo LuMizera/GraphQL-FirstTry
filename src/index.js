@@ -1,12 +1,12 @@
 const { ApolloServer } = require('apollo-server');
 const mongoose = require('mongoose');
-const { User } = require('./schemas/graphQL/user');
+const schema = require('./schemas/graphQL');
 const resolvers = require('./resolvers');
 const UserService = require('./services/user');
 const { UserModel } = require('./schemas/mongoose/user');
 
 const server = new ApolloServer({
-  typeDefs: User,
+  typeDefs: schema,
   dataSources: () => ({
     userModel: new UserService({ UserModel }),
   }),
