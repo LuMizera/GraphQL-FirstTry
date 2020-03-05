@@ -1,10 +1,10 @@
-const UserQueries = require('./users')
+const UserQueries = require('./users');
 
 module.exports = {
   Query: {
-    ...UserQueries.queries
+    ...UserQueries.queries,
   },
   Mutation: {
-    ...UserQueries.mutators
+    ...UserQueries.mutators,
   },
 };

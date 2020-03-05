@@ -1,5 +1,5 @@
 const { gql } = require('apollo-server');
-const UserSchema = require('./users')
+const UserSchema = require('./users');
 
 const schema = gql`
   ${UserSchema.types}

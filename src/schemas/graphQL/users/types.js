@@ -1,6 +1,6 @@
 module.exports = `
-type User {
+  type User {
     _id: ID!
     name: String!
   }
-`
+`;
