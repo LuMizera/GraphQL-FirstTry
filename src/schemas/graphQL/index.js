@@ -1,16 +1,26 @@
+/* eslint-disable import/no-dynamic-require */
+/* eslint-disable global-require */
 const { gql } = require('apollo-server');
-const UserSchema = require('./users');
+const fs = require('fs');
 
-const schema = gql`
-  ${UserSchema.types}
+const newSchema = () => {
+  let mySchema = '';
+  fs.readdirSync(__dirname).forEach((file) => {
+    if (file.includes('Schema')) {
+      mySchema += require(`./${file}`);
+    }
+  });
+  return mySchema;
+};
 
+module.exports = gql`
   type Query {
-    ${UserSchema.queries}
+    _empty: String
   }
 
   type Mutation {
-    ${UserSchema.mutators}
+    _empty: String
   }
-`;
 
-module.exports = schema;
+  ${newSchema()}
+`;
